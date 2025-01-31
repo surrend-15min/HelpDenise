@@ -119,6 +119,18 @@ main {
     font-weight: 300;
 }
 
+h2.frase {
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    margin-bottom: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: #000000;
+    padding: 50px;
+    font-size: 32px;
+    font-weight: 300;
+}
+
 .projects-title {
     font-family: Montserrat, sans-serif;
     font-size: 24px;
