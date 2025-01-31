@@ -1,12 +1,8 @@
-/* Impostazioni generali */
 body {
     font-family: Montserrat, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #c6c6c6;
-    display: flex; /* Usa flexbox */
-    flex-direction: column; /* Imposta il layout a colonna */
-    min-height: 100vh; /* Minima altezza di 100vh per riempire la finestra */
 }
 
 header {
@@ -76,17 +72,9 @@ nav ul li a {
     display: block;
 }
 
-/* Impostazioni globali per il box model */
-*,
-*::before,
-*::after {
-    box-sizing: border-box; /* Per evitare problemi con padding/margin */
-}
-
-
-/* Contenitore principale */
 main {
     padding: 20px;
+    min-height: 100vh;
     padding-bottom: 100px;
 }
 
@@ -98,91 +86,89 @@ main {
     padding: 50px 0;
 }
 
-.work-section {
+/* Sezione About Us */
+.about-us {
     text-align: center;
-    padding: 50px 20px;
+    margin: 30px 0;
+}
+
+.about-image {
+    width: 80%;
+    max-width: 1000px;
     height: auto;
-    min-height: 1400px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: opacity 0.5s ease;
 }
 
-.section-title {
-    font-size: 64px;
-    font-weight: 500; /* Montserrat Medium */
-    margin-bottom: 80px; /* Aumenta la distanza tra il titolo e il testo */
+.about-image:hover {
+    opacity: 0.8;
 }
 
-.section-description {
+/* Testo centrale */
+.frase {
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    margin-bottom: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: #000000;
+    padding: 50px;
     font-size: 32px;
-    font-weight: 300; /* Montserrat Light */
-    margin-bottom: 80px; /* Aumenta la distanza tra il testo e le immagini */
+    font-weight: 300;
 }
 
-/* Contenitore delle immagini */
-.images-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonne uguali */
-    gap: 10px; /* Riduce la distanza tra le immagini sia orizzontalmente che verticalmente */
-    justify-items: center; /* Centra orizzontalmente gli elementi nella griglia */
-    align-items: center; /* Centra verticalmente gli elementi nelle celle della griglia */
-    margin: 0 auto; /* Centra la griglia rispetto al contenitore principale */
-    max-width: 1000px; /* Limita la larghezza della griglia */
-    /*max-height: 100px;*/
-}
-
-/* Contenitore di ogni immagine */
-.image-wrapper {
-    position: relative;
+.projects-title {
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #000000;
+    margin-bottom: 20px; /* Distanza tra il titolo e la sezione sottostante */
+    text-align: left;
     width: 100%;
-    max-width: 500px; /* Limita la larghezza massima */
-    max-height: 500px;
-    padding-bottom: 0; /* Impostato a 100% per mantenere il quadrato */
-    margin: 0 auto; /* Centra ogni immagine */
 }
 
-.image-container {
-    position: relative;
-    overflow: hidden;
-    width: 500px;
-    height: 500px; /* Altezza fissa per le immagini */
-    grid-auto-rows: 50px; /* Imposta un'altezza fissa per le righe della griglia */
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Rende l'immagine che copre tutto lo spazio senza distorsioni */
-    transition: opacity 0.3s ease;
-}
-
-/* Overlay al passaggio del cursore */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+/* Sezione WORK */
+.work-section {
+    font-family: Montserrat, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    gap: 40px;
+    margin: 40px 0;
 }
 
-.overlay-text {
-    font-size: 24px;
-    color: white;
-    font-weight: 500; /* Montserrat Medium */
+.work-item {
     text-align: center;
+    width: 520px; /* Imposta la larghezza fissa */
+    height: 600px; /* Imposta l'altezza fissa */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
 }
 
-/* Effetto hover */
-.image-wrapper:hover .overlay {
-    opacity: 1;
+.work-item a {
+    text-decoration: none; /* Rimuove la sottolineatura dal link */
 }
 
-.image-wrapper:hover .image-container img {
-    opacity: 0.4;
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.work-item img:hover {
+    transform: scale(1.05);
+}
+
+.work-item p {
+    margin-top: 25px; /* Aggiunge spazio tra immagine e titolo */
+    font-size: 40px; /* Testo più leggibile */
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    color: #722C54;
 }
 
 footer{
@@ -198,18 +184,12 @@ footer{
     position: relative;
     bottom: 0;
     overflow: hidden; /* Prevenire lo scroll orizzontale */
-    margin-top: auto;
 }
 
 .footer-left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-
-/* Assicurati che il footer non venga influenzato da margini esterni */
-footer p, footer a {
-    margin: 0;
 }
 
 .footer-left p {
