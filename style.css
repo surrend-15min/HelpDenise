@@ -125,8 +125,8 @@ main {
     justify-items: center; /* Centra orizzontalmente gli elementi nella griglia */
     align-items: center; /* Centra verticalmente gli elementi nelle celle della griglia */
     margin: 0 auto; /* Centra la griglia rispetto al contenitore principale */
-    /*max-width: 1000px; /* Limita la larghezza della griglia */
-    /*max-height: 100px;*/
+    max-width: 1000px; /* Limita la larghezza della griglia */
+    /*max-height: 500px;*/
 }
 
 /* Contenitore di ogni immagine */
