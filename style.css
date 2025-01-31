@@ -126,7 +126,7 @@ main {
     align-items: center; /* Centra verticalmente gli elementi nelle celle della griglia */
     margin: 0 auto; /* Centra la griglia rispetto al contenitore principale */
     max-width: 1000px; /* Limita la larghezza della griglia */
-    /*max-height: 500px;*/
+    max-height: 100px;
 }
 
 /* Contenitore di ogni immagine */
