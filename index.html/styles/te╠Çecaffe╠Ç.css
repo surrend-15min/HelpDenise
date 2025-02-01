@@ -1,0 +1,145 @@
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+header {
+    background-color: #c6c6c6;
+    color: #722c54;
+    padding: 10px 50px;
+    text-align: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Centra verticalmente gli elementi */
+    justify-content: space-between; /* Spazia gli elementi */
+    width: 100%; /* Fa sì che il menu occupi tutta la larghezza */
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav ul li:first-child {
+    display: flex;
+    align-items: center; /* Centra il logo e la scritta */
+    gap: 10px; /* Distanza tra logo e il testo */
+}
+
+nav ul li:first-child a {
+    font-weight: 900;
+    font-size: 24px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #722C54;
+}
+
+nav ul li:not(:first-child):not(.social-icon) {
+    margin: 0 30px; /* Aggiunge spazio tra le voci di menu */
+}
+
+nav ul li a {
+    color: #722C54;
+    text-decoration: none;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente il logo e la scritta */
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.social-icon {
+    margin-left: auto; /* Sposta l'icona completamente a destra */
+}
+
+.instagram-logo {
+    width: 40px;  /* Dimensione del logo */
+    height: auto;
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.quote {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.image-container {
+    width: 48%;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    display: block;
+}
+
+.text-section {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.image-text {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.image-text img {
+    width: 50%;
+}
+
+.grid-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.grid-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.project-link {
+    background: #5a1f30;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.project-link a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}

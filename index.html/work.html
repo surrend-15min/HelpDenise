@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porta Verde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/work.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li class="logo-container">
+                    <img src="../images/logo.png" alt="Logo" class="logo">
+                    <a href="index.html">PORTA<br>VERDE</a>
+                </li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="work.html">WORK</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li class="social-icon">
+                    <a href="https://www.instagram.com/portaverde2/" target="_blank">
+                        <img src="../images/instagram.png" alt="Instagram" class="instagram-logo">
+                    </a>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="work">
+            <h1>WORK</h1>
+            <p class="epigraph">La nostra visione del lavoro è trasformare le idee in realtà attraverso design e innovazione.</p>
+
+
+<!-- Aggiungi il testo sopra la galleria -->
+<h2 class="gallery-title">Panoramica dei lavori</h2>
+
+            <!-- Galleria Fotografica -->
+<div class="gallery">
+    <!-- Miniature delle Immagini -->
+    <div class="thumbnails">
+        <img src="../images/gallery1.jpg" alt="Foto 1" class="thumbnail" data-full="../images/gallery1_large.jpg">
+        <img src="../images/gallery2.png" alt="Foto 2" class="thumbnail" data-full="../images/gallery2_large.png">
+        <img src="../images/gallery3.jpeg" alt="Foto 3" class="thumbnail" data-full="../images/gallery3_large.jpeg">
+        <img src="../images/gallery4.jpg" alt="Foto 4" class="thumbnail" data-full="../images/gallery4_large.jpg">
+        <img src="../images/gallery5.jpg" alt="Foto 5" class="thumbnail" data-full="../images/gallery5_large.jpg">
+        <img src="../images/gallery6.jpg" alt="Foto 6" class="thumbnail" data-full="../images/gallery6_large.jpg">
+        <img src="../images/gallery7.png" alt="Foto 7" class="thumbnail" data-full="../images/gallery7_large.png">
+        <!-- Aggiungi altre miniature se necessario -->
+    </div>
+
+    <!-- Modal per la Foto a Grandezza Naturale -->
+    <div id="modal" class="modal">
+        <span id="close-modal" class="close-btn">&times;</span>
+        <img id="full-img" class="full-img" src="" alt="Foto a grandezza naturale">
+    </div>
+</div>
+
+
+            <div class="work-container">
+                <a href="modelli3d.html" class="work-item">
+                    <img src="../images/work-modelli3D.png" alt="Modelli 3D">
+                    <span>MODELLI 3D</span>
+                </a>
+                <a href="studimateriali.html" class="work-item reverse">
+                    <span>STUDI SUI MATERIALI</span>
+                    <img src="../images/work-materiali.png" alt="Studi sui Materiali">
+                </a>
+                <a href="progettigrafici.html" class="work-item">
+                    <img src="../images/work-grafica.jpeg" alt="Progetti Grafici">
+                    <span>PROGETTI GRAFICI</span>
+                </a>
+            </div>
+
+            <p class="contact">Ti piacciono i nostri lavori? <br><a href="contact.html">Contattaci per avere informazioni</a></p>
+
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <p>per saperne di più</p>
+            <a href="https://instagram.com/portaverde2/" target="_blank">@portaverde2</a>
+        </div>
+        <div class="footer-right">
+            <a href="https://instagram.com/portaverde2/" target="_blank">
+                <img src="../images/footer.png" alt="Instagram">
+            </a>
+        </div>
+    </footer>
+
+
+    <script src="scripts/work.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c6c6c6;
+}
+
+header {
+    background-color: #000000;
+    color: #722c54;
+    padding: 10px 50px;
+    text-align: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Centra verticalmente gli elementi */
+    justify-content: space-between; /* Spazia gli elementi */
+    width: 100%; /* Fa sì che il menu occupi tutta la larghezza */
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav ul li:first-child {
+    display: flex;
+    align-items: center; /* Centra il logo e la scritta */
+    gap: 10px; /* Distanza tra logo e il testo */
+}
+
+nav ul li:first-child a {
+    font-weight: 900;
+    font-size: 24px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #722C54;
+}
+
+nav ul li:not(:first-child):not(.social-icon) {
+    margin: 0 30px; /* Aggiunge spazio tra le voci di menu */
+}
+
+nav ul li a {
+    color: #722C54;
+    text-decoration: none;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente il logo e la scritta */
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.social-icon {
+    margin-left: auto; /* Sposta l'icona completamente a destra */
+}
+
+.instagram-logo {
+    width: 40px;  /* Dimensione del logo */
+    height: auto;
+    display: block;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c6c6c6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    padding: 50px 20px;
+}
+
+h1 {
+    font-family: Montserrat;
+        font-size: 64px;
+        font-weight: 600;
+        color: black;
+        text-align: center;
+        margin-top: 130px;
+        margin-bottom: 70px;
+
+    }
+
+/* Sezione autori */
+.authors {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.author {
+    width: 350px;
+    text-align: left; /* Allinea tutto a sinistra rispetto alla foto */
+}
+
+.author h2 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 300; /* Light */
+    font-size: 28px;
+    margin: 15px 0 5px 0;
+}
+
+.author p {
+    font-family: Montserrat, sans-serif;
+    font-weight: 300; /* Light */
+    font-size: 20px;
+    margin: 10px 0 20px 0;
+}
+
+.author img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.values {
+    margin-top: 100px;
+    max-width: 760px;
+    text-align: left; /* Allinea tutto a sinistra */
+}
+
+h2 {
+    font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 400;
+        color: black;
+    }
+
+.values ul {
+    list-style: none;
+    padding: 0;
+}
+
+.values li {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.values li strong {
+    font-weight: 300; /* Light */
+    color: black;
+}
+
+.values li span {
+    font-weight: 300; /* Light */
+    color: #ffffff;
+}
+
+footer{
+    background-color: #000000;
+    color: white;
+    padding: 40px 200px;
+    display: flex;
+    justify-content: space-between; /* Testo a sinistra, immagine a destra */
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%; /* Utilizza solo max-width per evitare overflow */
+    box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza */
+    position: relative;
+    bottom: 0;
+    overflow: hidden; /* Prevenire lo scroll orizzontale */
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-left p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: Montserrat, sans-serif;
+}
+
+.footer-left a {
+    color: #722C54;
+    font-weight: 300;
+    font-size: 24px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+}
+
+.footer-right img {
+    width: 200px;  /* Dimensione dell'immagine */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-right img:hover {
+    transform: scale(1.1);
+}

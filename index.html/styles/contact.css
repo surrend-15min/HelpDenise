@@ -1,0 +1,187 @@
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+header {
+    background-color: #c6c6c6;
+    color: #722c54;
+    padding: 10px 50px;
+    text-align: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Centra verticalmente gli elementi */
+    justify-content: space-between; /* Spazia gli elementi */
+    width: 100%; /* Fa sì che il menu occupi tutta la larghezza */
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav ul li:first-child {
+    display: flex;
+    align-items: center; /* Centra il logo e la scritta */
+    gap: 10px; /* Distanza tra logo e il testo */
+}
+
+nav ul li:first-child a {
+    font-weight: 900;
+    font-size: 24px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #722C54;
+}
+
+nav ul li:not(:first-child):not(.social-icon) {
+    margin: 0 30px; /* Aggiunge spazio tra le voci di menu */
+}
+
+nav ul li a {
+    color: #722C54;
+    text-decoration: none;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente il logo e la scritta */
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.social-icon {
+    margin-left: auto; /* Sposta l'icona completamente a destra */
+}
+
+.instagram-logo {
+    width: 40px;  /* Dimensione del logo */
+    height: auto;
+    display: block;
+}
+
+/* Sezione Contatti */
+.contact-page {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.contact-page h1 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 64px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+/* Nome accanto ai numeri */
+.contact-name {
+    font-family: Montserrat, sans-serif;
+    font-weight: 300; /* Light */
+    color: white;
+    margin-right: 10px;
+}
+
+.contact-info {
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-weight: 300; /* Light */
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #722C54;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Al passaggio del mouse: il link resta visibile ma si sottolinea */
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(104, 67, 67, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #722c54;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+footer{
+    background-color: #c6c6c6;
+    color: black;
+    padding: 40px 200px;
+    display: flex;
+    justify-content: space-between; /* Testo a sinistra, immagine a destra */
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%; /* Utilizza solo max-width per evitare overflow */
+    box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza */
+    position: relative;
+    bottom: 0;
+    overflow: hidden; /* Prevenire lo scroll orizzontale */
+    margin-top: 100px; /* Maggiore spazio tra la sezione e il footer */
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-left p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: Montserrat, sans-serif;
+}
+
+.footer-left a {
+    color: #722C54;
+    font-weight: 300;
+    font-size: 24px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+}
+
+.footer-right img {
+    width: 200px;  /* Dimensione dell'immagine */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-right img:hover {
+    transform: scale(1.1);
+}

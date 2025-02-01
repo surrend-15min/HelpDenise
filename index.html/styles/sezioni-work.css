@@ -1,0 +1,242 @@
+/* Impostazioni generali */
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c6c6c6;
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Imposta il layout a colonna */
+    min-height: 100vh; /* Minima altezza di 100vh per riempire la finestra */
+}
+
+header {
+    background-color: #000000;
+    color: #722c54;
+    padding: 10px 50px;
+    text-align: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Centra verticalmente gli elementi */
+    justify-content: space-between; /* Spazia gli elementi */
+    width: 100%; /* Fa sì che il menu occupi tutta la larghezza */
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav ul li:first-child {
+    display: flex;
+    align-items: center; /* Centra il logo e la scritta */
+    gap: 10px; /* Distanza tra logo e il testo */
+}
+
+nav ul li:first-child a {
+    font-weight: 900;
+    font-size: 24px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #722C54;
+}
+
+nav ul li:not(:first-child):not(.social-icon) {
+    margin: 0 30px; /* Aggiunge spazio tra le voci di menu */
+}
+
+nav ul li a {
+    color: #722C54;
+    text-decoration: none;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente il logo e la scritta */
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.social-icon {
+    margin-left: auto; /* Sposta l'icona completamente a destra */
+}
+
+.instagram-logo {
+    width: 40px;  /* Dimensione del logo */
+    height: auto;
+    display: block;
+}
+
+/* Impostazioni globali per il box model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Per evitare problemi con padding/margin */
+}
+
+
+/* Contenitore principale */
+main {
+    padding: 20px;
+    padding-bottom: 100px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px; /* Aggiunge spazio tra le sezioni */
+    padding: 50px 0;
+}
+
+.work-section {
+    text-align: center;
+    padding: 50px 20px;
+    height: auto;
+    min-height: 1400px;
+}
+
+.section-title {
+    font-size: 64px;
+    font-weight: 500; /* Montserrat Medium */
+    margin-bottom: 80px; /* Aumenta la distanza tra il titolo e il testo */
+}
+
+.section-description {
+    font-size: 32px;
+    font-weight: 300; /* Montserrat Light */
+    margin-bottom: 80px; /* Aumenta la distanza tra il testo e le immagini */
+}
+
+/* Contenitore delle immagini */
+.images-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonne uguali */
+    gap: 10px; /* Riduce la distanza tra le immagini sia orizzontalmente che verticalmente */
+    justify-items: center; /* Centra orizzontalmente gli elementi nella griglia */
+    align-items: center; /* Centra verticalmente gli elementi nelle celle della griglia */
+    margin: 0 auto; /* Centra la griglia rispetto al contenitore principale */
+    max-width: 1000px; /* Limita la larghezza della griglia */
+}
+
+/* Contenitore di ogni immagine */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Limita la larghezza massima */
+    max-height: 500px;
+    padding-bottom: 0; /* Impostato a 100% per mantenere il quadrato */
+    margin: 0 auto; /* Centra ogni immagine */
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 500px; /* Altezza fissa per le immagini */
+    grid-auto-rows: 50px; /* Imposta un'altezza fissa per le righe della griglia */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rende l'immagine che copre tutto lo spazio senza distorsioni */
+    transition: opacity 0.3s ease;
+}
+
+/* Overlay al passaggio del cursore */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay-text {
+    font-size: 24px;
+    color: white;
+    font-weight: 500; /* Montserrat Medium */
+    text-align: center;
+}
+
+/* Effetto hover */
+.image-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.image-wrapper:hover .image-container img {
+    opacity: 0.4;
+}
+
+footer{
+    background-color: #000000;
+    color: white;
+    padding: 40px 200px;
+    display: flex;
+    justify-content: space-between; /* Testo a sinistra, immagine a destra */
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%; /* Utilizza solo max-width per evitare overflow */
+    box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza */
+    position: relative;
+    bottom: 0;
+    overflow: hidden; /* Prevenire lo scroll orizzontale */
+    margin-top: auto;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Assicurati che il footer non venga influenzato da margini esterni */
+footer p, footer a {
+    margin: 0;
+}
+
+.footer-left p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: Montserrat, sans-serif;
+}
+
+.footer-left a {
+    color: #722C54;
+    font-weight: 300;
+    font-size: 24px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+}
+
+.footer-right img {
+    width: 200px;  /* Dimensione dell'immagine */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-right img:hover {
+    transform: scale(1.1);
+}
