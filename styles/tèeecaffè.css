@@ -9,7 +9,7 @@
 }
 
 .image-text img {
-    width: 50%;  /* Immagine più grande */
+    width: 100em;  /* Immagine più grande */
     height: auto;
     float: right; /* Posiziona l'immagine a destra */
     margin-left: 20px;
