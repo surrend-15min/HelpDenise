@@ -4,79 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Fittizio</title>
+    <style>
+        #username:focus {
+            background-color: rgba(255, 255, 0, 0.2);
+        }
+        .tooltip {
+            position: absolute;
+            background-color: black;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div id="login-container">
-                    <input type="text" id="username" placeholder="username">
-                    <a href="#" id="login-btn">Login</a>
-                    <p id="welcome-message" style="display: none;"></p>
-                    <a href="#" id="logout-btn" style="display: none;">Logout</a>
-                </div>
-            <script>
+        <input type="text" id="username" placeholder="Inserisci il tuo username">
+        <a href="#" id="login-btn">Login</a>
+        <p id="welcome-message" style="display: none;"></p>
+        <a href="#" id="logout-btn" style="display: none;">Logout</a>
+    </div>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
-  const loginBtn = document.getElementById("login-btn");
-  const logoutBtn = document.getElementById("logout-btn");
-  const usernameInput = document.getElementById("username");
-  const welcomeMessage = document.getElementById("welcome-message");
+            const loginBtn = document.getElementById("login-btn");
+            const logoutBtn = document.getElementById("logout-btn");
+            const usernameInput = document.getElementById("username");
+            const welcomeMessage = document.getElementById("welcome-message");
 
-  // Creazione del tooltip
-  const tooltip = document.createElement("p");
-  tooltip.textContent = "utente 00";
-  tooltip.style.position = "absolute";
-  tooltip.style.color = "#ffffff";
-  tooltip.style.textAlign = "center";
-  tooltip.style.display = "none";
-  document.body.appendChild(tooltip);
+            // Creazione del tooltip
+            const tooltip = document.createElement("p");
+            tooltip.textContent = "Suggerimento: inserisci 'utente 00'";
+            tooltip.classList.add("tooltip");
+            document.body.appendChild(tooltip);
 
-  // Posiziona il tooltip sopra la casella di testo
-  function positionTooltip() {
-    const rect = usernameInput.getBoundingClientRect();
-    tooltip.style.left = '${rect.left + window.scrollX}px';
-    tooltip.style.top = '${rect.top + window.scrollY - tooltip.offsetHeight - 5}px';
-  }
+            // Posizionamento del tooltip
+            function positionTooltip(event) {
+                tooltip.style.left = `${event.pageX + 10}px`;
+                tooltip.style.top = `${event.pageY + 10}px`;
+            }
 
-  // Mostra il tooltip al passaggio del mouse
-  usernameInput.addEventListener("mouseenter", function () {
-    tooltip.style.display = "block";
-    positionTooltip();
-  });
+            // Mostra il tooltip al passaggio del mouse
+            usernameInput.addEventListener("mouseenter", function (event) {
+                tooltip.style.display = "block";
+                positionTooltip(event);
+            });
 
-  // Nascondi il tooltip quando il mouse esce dalla casella di testo
-  usernameInput.addEventListener("mouseleave", function () {
-    tooltip.style.display = "none";
-  });
+            // Nasconde il tooltip quando il mouse esce dalla casella di testo
+            usernameInput.addEventListener("mouseleave", function () {
+                tooltip.style.display = "none";
+            });
 
-  // Evidenzia il testo durante la digitazione
-  usernameInput.addEventListener("focus", function () {
-    usernameInput.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
-  });
+            // Il tooltip segue il mouse
+            usernameInput.addEventListener("mousemove", positionTooltip);
 
-  // Ripristina lo stile normale quando si esce dalla casella di testo
-  usernameInput.addEventListener("blur", function () {
-    usernameInput.style.backgroundColor = "transparent";
-  });
+            // Evidenzia il testo durante la digitazione
+            usernameInput.addEventListener("focus", function () {
+                usernameInput.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+            });
 
-  // Funzione di login
-  loginBtn.addEventListener("click", function () {
-    const username = usernameInput.value.trim();
-    if (username !== "") {
-      welcomeMessage.textContent = 'Benvenuto, ${username}';
-      welcomeMessage.style.display = "block";
-      logoutBtn.style.display = "block";
-      usernameInput.style.display = "none";
-      loginBtn.style.display = "none";
-    }
-  });
+            // Ripristina lo stile normale quando si esce dalla casella di testo
+            usernameInput.addEventListener("blur", function () {
+                usernameInput.style.backgroundColor = "transparent";
+            });
 
-  // Funzione di logout
-  logoutBtn.addEventListener("click", function () {
-    usernameInput.value = "";
-    welcomeMessage.style.display = "none";
-    logoutBtn.style.display = "none";
-    usernameInput.style.display = "block";
-    loginBtn.style.display = "block";
-  });
-});
+            // Funzione di login
+            loginBtn.addEventListener("click", function () {
+                const username = usernameInput.value.trim();
+                if (username !== "") {
+                    welcomeMessage.textContent = `Benvenuto, ${username}`;
+                    welcomeMessage.style.display = "block";
+                    logoutBtn.style.display = "block";
+                    usernameInput.style.display = "none";
+                    loginBtn.style.display = "none";
+                }
+            });
+
+            // Funzione di logout
+            logoutBtn.addEventListener("click", function () {
+                usernameInput.value = "";
+                welcomeMessage.style.display = "none";
+                logoutBtn.style.display = "none";
+                usernameInput.style.display = "block";
+                loginBtn.style.display = "block";
+            });
+        });
     </script>
 </body>
-</html>
