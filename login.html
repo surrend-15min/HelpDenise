@@ -3,18 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tè e Caffè</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/login.css">
+    <title>Login Fittizio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        .hidden {
+            display: none;
+        }
+        #hint {
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
 </head>
 <body>
-    <main>
-        <div id="login-container">
-                    <input type="text" id="username" placeholder="username">
-                    <a href="#" id="login-btn">Login</a>
-                    <p id="welcome-message" style="display: none;"></p>
-                    <a href="#" id="logout-btn" style="display: none;">Logout</a>
-                </div>
-    </main>
+    <div id="login-container">
+        <input type="text" id="username" placeholder="Inserisci il tuo nome utente">
+        <p id="hint" class="hidden">Suggerimento: Usa un nome a tua scelta</p>
+        <br>
+        <a href="#" id="login">Login</a>
+    </div>
+    
+    <div id="welcome-container" class="hidden">
+        <p id="welcome-message"></p>
+        <a href="#" id="logout">Logout</a>
+    </div>
+
+    <script>
+        const usernameInput = document.getElementById('username');
+        const loginButton = document.getElementById('login');
+        const logoutButton = document.getElementById('logout');
+        const loginContainer = document.getElementById('login-container');
+        const welcomeContainer = document.getElementById('welcome-container');
+        const welcomeMessage = document.getElementById('welcome-message');
+        const hint = document.getElementById('hint');
+
+        usernameInput.addEventListener('focus', () => {
+            hint.classList.remove('hidden');
+        });
+
+        usernameInput.addEventListener('blur', () => {
+            hint.classList.add('hidden');
+        });
+
+        usernameInput.addEventListener('input', () => {
+            usernameInput.classList.add('highlight');
+        });
+
+        usernameInput.addEventListener('blur', () => {
+            usernameInput.classList.remove('highlight');
+        });
+
+        loginButton.addEventListener('click', () => {
+            const username = usernameInput.value.trim();
+            if (username) {
+                welcomeMessage.textContent = `Benvenuto ${username}`;
+                loginContainer.classList.add('hidden');
+                welcomeContainer.classList.remove('hidden');
+            }
+        });
+
+        logoutButton.addEventListener('click', () => {
+            loginContainer.classList.remove('hidden');
+            welcomeContainer.classList.add('hidden');
+            usernameInput.value = '';
+        });
+    </script>
 </body>
 </html>
