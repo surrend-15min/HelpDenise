@@ -4,125 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Fittizio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            background-color: #f4f4f4;
-        }
-        input {
-            padding: 10px;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        input:focus {
-            border-color: #007BFF;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-        .highlight {
-            background-color: yellow;
-            transition: background-color 0.3s ease;
-        }
-        .hidden {
-            display: none;
-        }
-        #hint {
-            font-size: 12px;
-            color: gray;
-        }
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            text-decoration: none;
-            color: white;
-            background-color: #007BFF;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        a:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        a:active {
-            transform: scale(0.95);
-        }
-        #login-container, #welcome-container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            transition: opacity 0.5s ease, transform 0.3s ease;
-        }
-    </style>
 </head>
 <body>
     <div id="login-container">
-        <input type="text" id="username" placeholder="Inserisci il tuo nome utente">
-        <p id="hint" class="hidden">Suggerimento: Usa un nome a tua scelta</p>
-        <br>
-        <a href="#" id="login">Login</a>
-    </div>
-    
-    <div id="welcome-container" class="hidden">
-        <p id="welcome-message"></p>
-        <a href="#" id="logout">Logout</a>
-    </div>
+                    <input type="text" id="username" placeholder="username">
+                    <a href="#" id="login-btn">Login</a>
+                    <p id="welcome-message" style="display: none;"></p>
+                    <a href="#" id="logout-btn" style="display: none;">Logout</a>
+                </div>
+            <script>
+        document.addEventListener("DOMContentLoaded", function () {
+  const loginBtn = document.getElementById("login-btn");
+  const logoutBtn = document.getElementById("logout-btn");
+  const usernameInput = document.getElementById("username");
+  const welcomeMessage = document.getElementById("welcome-message");
 
-    <script>
-        const usernameInput = document.getElementById('username');
-        const loginButton = document.getElementById('login');
-        const logoutButton = document.getElementById('logout');
-        const loginContainer = document.getElementById('login-container');
-        const welcomeContainer = document.getElementById('welcome-container');
-        const welcomeMessage = document.getElementById('welcome-message');
-        const hint = document.getElementById('hint');
+  // Creazione del tooltip
+  const tooltip = document.createElement("p");
+  tooltip.textContent = "utente 00";
+  tooltip.style.position = "absolute";
+  tooltip.style.color = "#ffffff";
+  tooltip.style.textAlign = "center";
+  tooltip.style.display = "none";
+  document.body.appendChild(tooltip);
 
-        usernameInput.addEventListener('focus', () => {
-            hint.classList.remove('hidden');
-        });
+  // Posiziona il tooltip sopra la casella di testo
+  function positionTooltip() {
+    const rect = usernameInput.getBoundingClientRect();
+    tooltip.style.left = ${rect.left + window.scrollX}px;
+    tooltip.style.top = ${rect.top + window.scrollY - tooltip.offsetHeight - 5}px;
+  }
 
-        usernameInput.addEventListener('blur', () => {
-            hint.classList.add('hidden');
-        });
+  // Mostra il tooltip al passaggio del mouse
+  usernameInput.addEventListener("mouseenter", function () {
+    tooltip.style.display = "block";
+    positionTooltip();
+  });
 
-        usernameInput.addEventListener('input', () => {
-            usernameInput.classList.add('highlight');
-        });
+  // Nascondi il tooltip quando il mouse esce dalla casella di testo
+  usernameInput.addEventListener("mouseleave", function () {
+    tooltip.style.display = "none";
+  });
 
-        usernameInput.addEventListener('blur', () => {
-            usernameInput.classList.remove('highlight');
-        });
+  // Evidenzia il testo durante la digitazione
+  usernameInput.addEventListener("focus", function () {
+    usernameInput.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+  });
 
-        loginButton.addEventListener('click', () => {
-            const username = usernameInput.value.trim();
-            if (username) {
-                welcomeMessage.textContent = `Benvenuto ${username}`;
-                loginContainer.style.opacity = '0';
-                loginContainer.style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    loginContainer.classList.add('hidden');
-                    welcomeContainer.classList.remove('hidden');
-                    welcomeContainer.style.opacity = '1';
-                    welcomeContainer.style.transform = 'scale(1)';
-                }, 300);
-            }
-        });
+  // Ripristina lo stile normale quando si esce dalla casella di testo
+  usernameInput.addEventListener("blur", function () {
+    usernameInput.style.backgroundColor = "transparent";
+  });
 
-        logoutButton.addEventListener('click', () => {
-            welcomeContainer.style.opacity = '0';
-            welcomeContainer.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                loginContainer.classList.remove('hidden');
-                loginContainer.style.opacity = '1';
-                loginContainer.style.transform = 'scale(1)';
-                welcomeContainer.classList.add('hidden');
-                usernameInput.value = '';
-            }, 300);
-        });
+  // Funzione di login
+  loginBtn.addEventListener("click", function () {
+    const username = usernameInput.value.trim();
+    if (username !== "") {
+      welcomeMessage.textContent = Benvenuto, ${username};
+      welcomeMessage.style.display = "block";
+      logoutBtn.style.display = "block";
+      usernameInput.style.display = "none";
+      loginBtn.style.display = "none";
+    }
+  });
+
+  // Funzione di logout
+  logoutBtn.addEventListener("click", function () {
+    usernameInput.value = "";
+    welcomeMessage.style.display = "none";
+    logoutBtn.style.display = "none";
+    usernameInput.style.display = "block";
+    loginBtn.style.display = "block";
+  });
+});
     </script>
 </body>
 </html>
