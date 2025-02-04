@@ -1,0 +1,23 @@
+.image-text {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin: 80px 130px;
+    margin-top: 100px;
+
+    color: white;
+}
+
+.image-text img {
+    width: 100%;  /* Immagine più grande */
+    height: auto;
+    float: right; /* Posiziona l'immagine a destra */
+    margin-left: 20px;
+    object-fit: cover;
+}
+
+.image-text p {
+    font-size: 20px; /* Testo più piccolo per la terza immagine */
+    text-align: left; /* Allinea il testo a sinistra */
+    font-weight: 300;
+}
