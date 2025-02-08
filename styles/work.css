@@ -1,3 +1,5 @@
+
+
 body {
     font-family: Montserrat, sans-serif;
     margin: 0;
@@ -71,6 +73,52 @@ nav ul li a {
     height: auto;
     display: block;
 }
+
+/* Nasconde il checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Stile per l'icona hamburger */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #722c54;
+    padding: 10px;
+}
+
+/* Media Query per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none; /* Nasconde il menu inizialmente */
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        background-color: #e5e5e5;
+        text-align: center;
+    }
+
+    .menu li {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block; /* Mostra l'icona su mobile */
+    }
+
+    /* Mostra il menu quando il checkbox è attivo */
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+}
+
+
+
+
 
 h1 {
     font-family: Montserrat;
@@ -213,6 +261,31 @@ h1 {
     flex-direction: row-reverse !important; /* Forza il cambio di direzione */
 }
     
+@media screen and (max-width: 768px) {
+    .work-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .work-item {
+        flex-direction: column; /* Impila immagine e titolo verticalmente */
+        text-align: center;
+        padding: 30px;
+    }
+
+    .work-item img {
+        width: 100%;
+        max-width: 300px; /* Limita la dimensione dell'immagine */
+        margin: 0 auto 20px auto; /* Centra l'immagine e aggiunge spazio sotto */
+    }
+
+    .work-item span {
+        margin: 0;
+    }
+}
+
+
+
     .contact {
         font-family: Montserrat;
         color: #ffffff;
@@ -225,7 +298,6 @@ h1 {
     
     .contact a {
         color: #722c54;
-        text-decoration: none;
         font-weight: 400;
     }
     
@@ -286,57 +358,4 @@ h1 {
         transform: scale(1.1);
     }
 
-
-
-    .container{
-        padding: 75px 0;
-        margin: 0 auto;
-        width: 100%;
-      }
-      .gallery-wrap {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 70vh;
-      }
-      
-      .item {
-        flex: 1;
-        height: 100%;
-        background-position: center;
-        background-size: cover;
-        background-repeat: none;
-        transition: flex 0.8s ease;
-        
-        &:hover{
-          flex: 7;
-        }
-      }
-      
-      .item-1 { 
-        background-image: url('../images/gallery1_large.jpg');
-      }
-      
-      .item-2 { 
-        background-image: url('../images/gallery2_large.png');
-      }
-      
-      .item-3 { 
-        background-image: url('../images/gallery3_large.jpeg');
-      }
-      
-      .item-4 { 
-        background-image: url('../images/gallery4_large.jpg');
-      }
-      
-      .item-5 { 
-        background-image: url('../images/gallery5_large.jpg');
-      }      
-
-      .item-6 { 
-        background-image: url('../images/gallery6_large.jpg');
-      } 
-
-      .item-7 { 
-        background-image: url('../images/gallery7_large.png');
-      } 
+    @media screen and (max-width: 768px) { }

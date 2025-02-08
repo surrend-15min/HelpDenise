@@ -72,6 +72,48 @@ nav ul li a {
     display: block;
 }
 
+/* Nasconde il checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Stile per l'icona hamburger */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #722c54;
+    padding: 10px;
+}
+
+/* Media Query per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none; /* Nasconde il menu inizialmente */
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        background-color: #e5e5e5;
+        text-align: center;
+    }
+
+    .menu li {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block; /* Mostra l'icona su mobile */
+    }
+
+    /* Mostra il menu quando il checkbox è attivo */
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+}
+
 /* Sezione Contatti */
 .contact-page {
     text-align: center;

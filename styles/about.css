@@ -72,6 +72,63 @@ nav ul li a {
     display: block;
 }
 
+/* Nasconde il checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Stile per l'icona hamburger */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #722c54;
+    padding: 10px;
+}
+
+/* Media Query per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none; /* Nasconde il menu inizialmente */
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        background-color: #e5e5e5;
+        text-align: center;
+    }
+
+    .menu li {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block; /* Mostra l'icona su mobile */
+    }
+
+    /* Mostra il menu quando il checkbox è attivo */
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .authors {
+        flex-direction: column; /* Cambia da riga a colonna */
+        align-items: center; /* Centra gli elementi */
+        gap: 30px; /* Riduce lo spazio tra gli autori */
+    }
+
+    .author {
+        width: 100%; /* Fa sì che ogni autore occupi tutta la larghezza */
+        text-align: center; /* Allinea il testo al centro */
+    }
+}
+
+
+
 body {
     font-family: Montserrat, sans-serif;
     margin: 0;
@@ -218,3 +275,4 @@ footer{
 .footer-right img:hover {
     transform: scale(1.1);
 }
+

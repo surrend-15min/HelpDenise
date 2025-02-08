@@ -51,6 +51,84 @@ nav ul li a {
     text-decoration: none;
 }
 
+#login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 240px; /* Assicura che sia centrato nel footer */
+    margin-left: auto; /* Sposta il login verso destra */
+    gap: 5px; /* Distanza tra input e bottone */
+    width: fit-content; /* Mantiene la larghezza minima necessaria */
+}
+
+#username {
+    text-align: center; /* Centra il testo dentro l'input */
+    font-size: 18px;
+    padding: 5px;
+    width: 120px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#username::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#username:focus {
+    border-color: #722C54;
+    background-color: rgba(147, 96, 96, 0.848); /* Sfondo leggermente colorato */
+    color: #c6c6c6;
+}
+
+.hint {
+    display: none;
+    color: white;
+    font-size: 14px;
+    font-family: Montserrat, sans-serif;
+    margin-top: 5px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#login-btn {
+    display: block;
+    text-align: center;
+    margin-top: 5px; /* Spazio sopra il pulsante */
+}
+
+#login-btn, #logout-btn {
+    font-size: 18px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+#login-btn:hover, #logout-btn:hover {
+    text-decoration: underline;
+}
+
+#welcome-message {
+    font-size: 18px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    color: white;
+    margin-top: 10px;
+    margin-right: 40px;
+    text-align: center; /* Centra il testo */
+    flex-direction: column; /* Ogni elemento va su una riga */
+}
+
+
+
+
 .logo-container {
     display: flex;
     align-items: center; /* Centra verticalmente il logo e la scritta */
@@ -63,7 +141,7 @@ nav ul li a {
 }
 
 .social-icon {
-    margin-left: auto; /* Sposta l'icona completamente a destra */
+    margin-left: 20px; /* Sposta l'icona completamente a destra */
 }
 
 .instagram-logo {
@@ -71,6 +149,51 @@ nav ul li a {
     height: auto;
     display: block;
 }
+
+/* Nasconde il checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Stile per l'icona hamburger */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #722c54;
+    padding: 10px;
+}
+
+/* Media Query per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none; /* Nasconde il menu inizialmente */
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        background-color: #e5e5e5;
+        text-align: center;
+    }
+
+    .menu li {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block; /* Mostra l'icona su mobile */
+    }
+
+    /* Mostra il menu quando il checkbox è attivo */
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+}
+
+
+
 
 
 main {
@@ -171,6 +294,11 @@ main {
     color: #722C54;
 }
 
+@media screen and (max-width: 768px) {
+    .work-item p {
+        font-size: 30px; /* Riduce la grandezza del testo */
+    }
+}
 
 footer{
     background-color: #000000;
@@ -223,93 +351,10 @@ footer{
     transform: scale(1.1);
 }
 
-
-
-@media (max-width: 768px) {
-    nav ul {
-      display: none; /* Nascondiamo il menu desktop */
-    }
-  
-    .hamburger-menu {
-      display: block; /* Mostriamo un'icona per il menu mobile */
-    }
-  
-    .work-grid img {
-      width: 100%; /* Le immagini occupano tutta la larghezza dello schermo */
-    }
-  }
-
 #login-container {
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-right: 15px; /* Assicura che sia centrato nel footer */
-    margin-left: auto; /* Sposta il login verso destra */
-    gap: 5px; /* Distanza tra input e bottone */
-    width: fit-content; /* Mantiene la larghezza minima necessaria */
+    align-items: flex-start;
 }
 
-#username {
-    text-align: center; /* Centra il testo dentro l'input */
-    font-size: 18px;
-    padding: 5px;
-    width: 120px;
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
-    font-family: Montserrat, sans-serif;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-#username::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-#username:focus {
-    border-color: #722C54;
-    background-color: rgba(147, 96, 96, 0.848); /* Sfondo leggermente colorato */
-    color: #c6c6c6;
-}
-
-.hint {
-    display: none;
-    color: white;
-    font-size: 14px;
-    font-family: Montserrat, sans-serif;
-    margin-top: 5px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-#login-btn {
-    display: block;
-    text-align: center;
-    margin-top: 5px; /* Spazio sopra il pulsante */
-}
-
-#login-btn, #logout-btn {
-    font-size: 18px;
-    font-family: Montserrat, sans-serif;
-    font-weight: 300;
-    color: white;
-    text-decoration: none;
-    margin-top: 10px;
-}
-
-#login-btn:hover, #logout-btn:hover {
-    text-decoration: underline;
-}
-
-#welcome-message {
-    font-size: 18px;
-    font-family: Montserrat, sans-serif;
-    font-weight: 300;
-    color: white;
-    margin-top: 10px;
-    margin-right: 40px;
-    text-align: center; /* Centra il testo */
-    flex-direction: column; /* Ogni elemento va su una riga */
-}

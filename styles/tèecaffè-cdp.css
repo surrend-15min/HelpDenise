@@ -1,0 +1,434 @@
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+header {
+    background-color: #c6c6c6;
+    color: #722c54;
+    padding: 10px 50px;
+    text-align: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Centra verticalmente gli elementi */
+    justify-content: space-between; /* Spazia gli elementi */
+    width: 100%; /* Fa sì che il menu occupi tutta la larghezza */
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav ul li:first-child {
+    display: flex;
+    align-items: center; /* Centra il logo e la scritta */
+    gap: 10px; /* Distanza tra logo e il testo */
+}
+
+nav ul li:first-child a {
+    font-weight: 900;
+    font-size: 24px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #722C54;
+}
+
+nav ul li:not(:first-child):not(.social-icon) {
+    margin: 0 30px; /* Aggiunge spazio tra le voci di menu */
+}
+
+nav ul li a {
+    color: #722C54;
+    text-decoration: none;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente il logo e la scritta */
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.social-icon {
+    margin-left: auto; /* Sposta l'icona completamente a destra */
+}
+
+.instagram-logo {
+    width: 40px;  /* Dimensione del logo */
+    height: auto;
+    display: block;
+}
+
+/* Nasconde il checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Stile per l'icona hamburger */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #722c54;
+    padding: 10px;
+}
+
+/* Media Query per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none; /* Nasconde il menu inizialmente */
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        background-color: #e5e5e5;
+        text-align: center;
+    }
+
+    .menu li {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block; /* Mostra l'icona su mobile */
+    }
+
+    /* Mostra il menu quando il checkbox è attivo */
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+}
+
+
+
+
+
+h2 {
+    font-family: Montserrat;
+        font-size: 64px;
+        font-weight: 600;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 150px;
+        margin-bottom: 80px;
+
+    }
+
+
+.quote {
+    text-align: center;
+    font-style: normal;
+    color: #666;
+    font-size: 32px;
+    margin-bottom: 44px;
+}
+
+.didascalia {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 90px;
+}
+
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.image-container {
+    width: 80%;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%; /* Fa sì che l'immagine occupi tutta la larghezza disponibile */
+    height: auto;
+    
+}
+
+figcaption {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 5px; /* Distanza tra immagine e didascalia */
+    margin-bottom: 80px;
+}
+
+h1{
+    margin: 20px 100px;
+    text-align: justify;
+    color: white;
+    column-count: 2;
+    column-gap: 30px;
+    font-size: 36px;
+    font-weight: 300;
+}
+
+
+
+.text-container {
+    display: flex;
+    align-items: flex-start; /* Allinea il testo in alto */
+    gap: 20px; /* Aggiunge spazio tra le colonne */
+    margin-top: 0%;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: justify;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.text-container > div {
+    flex: 1; /* Entrambe le colonne avranno la stessa larghezza */
+}
+
+
+
+/* Terza immagine a destra */
+.image-text {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin: 80px 130px;
+    margin-top: 100px;
+    color: white;
+}
+
+.image-text img {
+    width: 100%;  /* Immagine più grande */
+    height: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+/* Centra il titolo "Interpretazione" */
+.title h2 {
+    text-align: center; /* Allinea il testo al centro */
+    color: white; /* Colore del titolo */
+    font-size: 32px; /* Regola la dimensione del titolo */
+    font-weight: 300; /* Peso del titolo */
+    margin: 30px 0; /* Aggiunge spazio sopra e sotto il titolo */
+}
+
+/* Testo della sezione "Interpretazione" in una colonna centrata */
+.text-section.centered {
+    width: 60%; /* Puoi regolare la larghezza a tuo piacere */
+    margin: 0 auto; /* Centra il contenuto */
+    column-count: 1;
+    font-size: 20px;
+    color: white;
+    font-weight: 300;
+    text-align: justify; /* Allinea il testo a giustificato */
+    line-height: 1.6; /* Aumenta l'interlinea per migliorare la leggibilità */
+}
+
+/* Le immagini dopo il testo devono essere una riga di 2 immagini */
+.image-row {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente le immagini */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-container {
+    width: 45%; 
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%; /* Immagine che prende tutta la larghezza del container */
+    height: auto;
+}
+
+
+
+/* Pulsante finale con immagine a sinistra e testo a destra */
+
+.related-projects-title {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    margin-top: 100px;
+}
+
+.work-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 0;
+    gap: 70px; /* Maggiore spazio tra i rettangoli */
+    margin-top: 80px;
+    margin-bottom: 200px;
+    margin-left: 74px;
+    height: 300px;
+    width: 1400px;
+}
+
+.work-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #623030;
+    width: 80%;
+    padding: 40px;
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+    min-height: 180px;
+    border-radius: 16px;
+    padding: 50px; /* Maggiore spazio interno */
+}
+
+.work-item span {
+    flex: 1;
+    text-align: center;
+    margin: 0 30px; /* Sposta leggermente il testo verso il centro */
+}
+
+
+.work-item img {
+    width: 240px;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 30px; /* Sposta leggermente le immagini verso il centro */
+    transition: transform 0.3s ease-in-out;
+}
+
+.work-item img:hover {
+transform: scale(1.1); /* Effetto di ingrandimento */
+}
+
+
+
+@media screen and (max-width: 768px) {
+   /* Testo paragrafo in una sola colonna */
+   h1 {
+    column-count: 1;
+    font-size: 28px;
+    margin: 20px;
+}
+
+.text-container {
+    flex-direction: column;
+    margin: 20px;
+}
+
+/* Immagini */
+.image-row {
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container {
+    width: 100%;
+}
+
+.image-text {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.image-text img {
+    width: 100%;
+}
+
+ /* Ridisposizione dei lavori in work-container */
+ .work-container {
+    width: 90%;
+    margin: auto;
+    height: auto;
+}
+
+.work-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.work-item img {
+    margin: 20px 0; /* Spazio tra immagine e testo */
+}
+}
+
+
+
+
+footer{
+    background-color: #c6c6c6;
+    color: black;
+    padding: 40px 200px;
+    display: flex;
+    justify-content: space-between; /* Testo a sinistra, immagine a destra */
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%; /* Utilizza solo max-width per evitare overflow */
+    box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza */
+    position: relative;
+    bottom: 0;
+    overflow: hidden; /* Prevenire lo scroll orizzontale */
+    margin-top: 100px; /* Maggiore spazio tra la sezione e il footer */
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-left p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: Montserrat, sans-serif;
+}
+
+.footer-left a {
+    color: #722C54;
+    font-weight: 300;
+    font-size: 24px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+}
+
+.footer-right img {
+    width: 200px;  /* Dimensione dell'immagine */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-right img:hover {
+    transform: scale(1.1);
+}
